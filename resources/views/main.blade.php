@@ -64,7 +64,7 @@
                 <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 19 January 1995</li>
                 <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
                 <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +82 (0)10-2258-0119</li>
-                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Korea</li>
+                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : Korea</li>
               </ul>
             </div>
             <div class="col-lg-6">
