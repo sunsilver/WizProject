@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class BoardController extends Controller
 {
@@ -13,7 +14,9 @@ class BoardController extends Controller
      */
     public function index()
     {
-        //
+        //게시글 리스트 
+        $wiz_boards =  DB::table('wiz_boards')->get();
+        return view('board.list')->with('wiz_boards', $wiz_boards);
     }
 
     /**
@@ -23,7 +26,8 @@ class BoardController extends Controller
      */
     public function create()
     {
-        //
+        //뷰 파일 경로
+        return view('board.create_form');
     }
 
     /**
@@ -34,7 +38,8 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('wiz_boards')->insert(['title'=>$request->title,'content'=>$request->content, 'created_at'=>$request->created_at,'user_id'=>1]);
+        return redirect(route('list'));
     }
 
     /**
@@ -45,7 +50,8 @@ class BoardController extends Controller
      */
     public function show($id)
     {
-        //
+        $wiz_boards = DB::table('wiz_boards')->where('id',$id)->first();
+        return view('board.view')->with('wiz_boards', $wiz_boards);
     }
 
     /**
@@ -56,7 +62,8 @@ class BoardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $wiz_boards = DB::table('wiz_boards')->where('id',$id)->first();
+        return view('board.edit_form')->with('wiz_boards',$wiz_boards);
     }
 
     /**
@@ -68,7 +75,8 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('wiz_boards')->where('id',$id)->update(['title'=> $request->title, 'content'=> $request->content]);
+        return redirect('view/' .$id);
     }
 
     /**
@@ -79,6 +87,9 @@ class BoardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('wiz_boards')->where('id',$id)->delete();
+        return redirect('board/list');
     }
 }
+
+
