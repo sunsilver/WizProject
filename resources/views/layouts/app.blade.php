@@ -36,7 +36,10 @@
     </div>
 
     <!-- Vendor JS Files -->
-    <script src="{{ asset('js/jquery.min.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/jquery.min.js') }}" defer></script> --}}
+    {{-- 제이쿼리 버전 이슈로 수정  --}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('js/jquery.easing.min.js') }}" defer></script>
     <script src="{{ asset('js/validate.js') }}" defer></script>
@@ -44,7 +47,8 @@
     <script src="{{ asset('js/counterup.min.js') }}" defer></script>
     <script src="{{ asset('js/isotope.pkgd.min.js') }}" defer></script>
     <script src="{{ asset('js/venobox.min.js') }}" defer></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="{{ asset('js/typed.min.js') }}" defer></script>
     <script src="{{ asset('js/aos.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
