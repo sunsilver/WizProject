@@ -10,15 +10,9 @@ class Comment extends Model
         'id', 'comment_writer_id', 'post_id','content','created_at','updated_at'
     ];
 
-    // 하나의 글은 여러 댓글을 가질 수 있다
-    public function boards()
+    // 하나의 댓글은 1명의 작성자를 가진다.
+    public function getUserName()
     {
-        return $this->belongsTo(Board::class);
-    }
-
-    // 하나의 회원은 여러 댓글을 가질 수 있다
-    public function users()
-    {
-        return $this->belongsTo(User::class);
+        return $this->hasOne('App\User', 'id', 'comment_writer_id');
     }
 }

@@ -25,8 +25,13 @@ Route::group(['middleware' => 'IsLogin'], function () {
     Route::get('/list', 'BoardController@index')->name('list');
     Route::get('/create_form', 'BoardController@create');
     Route::post('/store', 'BoardController@store');
-    Route::get('/view/{id}', 'BoardController@show');
+    Route::get('/view/{id}', 'BoardController@show')->name('view');
     Route::get('/edit_form/{id}', 'BoardController@edit');
     Route::post('/update/{id}', 'BoardController@update');
     Route::get('/delete/{id}', 'BoardController@destroy');
+
+    // Comment API
+    Route::post('/comment/create', 'CommentController@create')->name('comment.create');
+    Route::post('/comment/delete', 'CommentController@delete')->name('comment.delete');
+    Route::post('/comment/update', 'CommentController@update')->name('comment.update');
 });
