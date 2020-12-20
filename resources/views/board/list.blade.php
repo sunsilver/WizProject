@@ -27,11 +27,12 @@
                     <td>{{$wiz_board->getUserName->name}}</td>
                 </tr>
                 @endforeach
-                </tread>
+            </tread>
         </table>
     </div>
     <div class="row" >
-        <div class="pagination col-md-8">
+        {{ $wiz_boards->links() }}
+        {{-- <div class="pagination col-md-8">
             <a href="#">&laquo;</a>
             <a href="#">1</a>
             <a href="#">2</a>
@@ -40,7 +41,7 @@
             <a href="#">5</a>
             <a href="#">6</a>
             <a href="#">&raquo;</a>
-        </div>
+        </div> --}}
         
         <div class="bt col-md-4">
         <button type="button" class="btn juicy-peach-gradient" style="float: right"

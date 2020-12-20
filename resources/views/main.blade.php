@@ -27,7 +27,12 @@
 
       <div class="section-title">
         <h2>About</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p class="wf-mplus1p">私はヨンジン専門大学のウェブデーターベースを専攻している4 年生のハン・ヘウンと申します。
+          私の長所は、ゴールまでの道筋を立て、着実に努力し続けられるところです。計画性
+          柔軟性の両方を組み合わせて努力する習慣を身に着けたおかげで、短期間で日本語の実力を伸ばしたり、複数のポジションでの開発にチャレンジしてやり遂げるなどの結果を出すことができました。また、チームの中では、常に周りにポジティブなエネルギーを与えることができます。
+          今後も、この強みを活かして、やったことがない事や、達成が難しいと思えるようなことでも、積極的にチャレンジし、チームを率いる人になって会社に貢献していきたいです。
+          本日はどうぞよろしくお願いします。
+          </p>
       </div>
 
       <div class="row">
@@ -35,7 +40,7 @@
           <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content">
-          <h3>UI/UX Designer &amp; Web Developer.</h3>
+          <h3>Web Developer.</h3>
           <p class="font-italic">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.
@@ -43,7 +48,7 @@
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 19 January 1995</li>
+                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 19 January 1998</li>
                 <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
                 <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +82 (0)10-2258-0119</li>
                 <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : Korea</li>

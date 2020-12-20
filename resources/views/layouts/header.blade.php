@@ -12,7 +12,7 @@
         <li><a href="#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
         <li><a href="#services"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        <li><a href="{{ url('/list') }}"><i class="bx bx-envelope"></i> <span>Board</span></a></li>
+        <li><a href="{{ url('/list') }}"><i class="bx bx-chalkboard"></i> <span>Board</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
 </header><!-- End Header -->

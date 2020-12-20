@@ -40,11 +40,18 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::user() == null) {
+            return redirect(route('login'));
+        }else {
+
+            $userId = Auth::user()->id;
+        }
         Board::insert([
             'title'=>$request->title,
             'content'=>$request->content,
-            'user_id'=>Auth::user()->id
-            ]);
+            'user_id'=>$userId,
+            'created_at' => date("Y-m-d h:i:s", time())
+        ]);
 
         return redirect(route('list'));
     }
@@ -86,7 +93,8 @@ class BoardController extends Controller
     {
         Board::where('id',$id)->update([
             'title'=> $request->title, 
-            'content'=> $request->content
+            'content'=> $request->content,
+            'updated_at' => date("Y-m-d h:i:s", time())
             ]);
         
         return redirect('view/' .$id);
