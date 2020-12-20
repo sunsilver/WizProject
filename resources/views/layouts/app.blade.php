@@ -21,11 +21,16 @@
     <link href="{{ asset('css/venobox.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     @yield('style')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.1.0/css/bootstrap-notify.min.css" rel="stylesheet" />
+    <link href="{{ asset('css/style.css') }}?{{ time() }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
+        @hasSection('loginUI')
+            @yield('loginUI')
+        @endif
+
         @include('layouts.header')
 
         <main class="py-4">
@@ -51,6 +56,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="{{ asset('js/typed.min.js') }}" defer></script>
     <script src="{{ asset('js/aos.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.3/bootstrap-notify.min.js"></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
 
     @yield('script')
