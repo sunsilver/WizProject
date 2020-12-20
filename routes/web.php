@@ -18,11 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('logout', 'LoginController@logout');
 //board
-Route::get('/list', 'BoardController@index')->name('list');
-Route::get('/create_form', 'BoardController@create');
-Route::post('/store', 'BoardController@store');
-Route::get('/view/{id}', 'BoardController@show');
-Route::get('/edit_form/{id}', 'BoardController@edit');
-Route::post('/update/{id}', 'BoardController@update');
+
+Route::group(['middleware' => 'IsLogin'], function () {
+    Route::get('/list', 'BoardController@index')->name('list');
+    Route::get('/create_form', 'BoardController@create');
+    Route::post('/store', 'BoardController@store');
+    Route::get('/view/{id}', 'BoardController@show');
+    Route::get('/edit_form/{id}', 'BoardController@edit');
+    Route::post('/update/{id}', 'BoardController@update');
+    Route::get('/delete/{id}', 'BoardController@destroy');
+});

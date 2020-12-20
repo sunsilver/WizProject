@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('title', 'title name')
+
+@include('layouts.user')
+
 @section('style')
-  <!-- Template Main CSS File -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 @endsection
 
@@ -15,21 +17,36 @@
                     <th>Title</th>
                     <th>Content</th>
                     <th>Date</th>
+                    <th>Writer</th>
                 </tr>
                 @foreach($wiz_boards as $wiz_board)
                 <tr>
                     <td><a href="{{ url('view') }}/{{ $wiz_board->id }}">{{$wiz_board->title}}</a></td>
                     <td>{{$wiz_board->content}}</td>
                     <td>{{$wiz_board->created_at}}</td>
+                    <td>{{$wiz_board->name}}</td>
                 </tr>
 
                 @endforeach
                 </tread>
         </table>
     </div>
-    <div class="bt">
-    <button type="button" class="btn juicy-peach-gradient"
-            onclick="window.location='{{url('create_form')}}'">글쓰기</button>
+    <div class="row" >
+        <div class="pagination col-md-8">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+        </div>
+        
+        <div class="bt col-md-4">
+        <button type="button" class="btn juicy-peach-gradient" style="float: right"
+                onclick="window.location='{{url('create_form')}}'">글쓰기</button>
+        </div>
     </div>
     
 </div>
@@ -37,7 +54,5 @@
 
 
 @section('script')
-<!-- Template Main JS File -->
-<script src="{{ asset('js/main.js') }}" defer></script>
 
 @endsection

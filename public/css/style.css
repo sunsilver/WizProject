@@ -26,6 +26,34 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.wf-mplus1p {
+  font-family: "M PLUS 1p"; }
+
+.wf-roundedmplus1c { 
+  font-family: "M PLUS Rounded 1c"; }
+
+.wf-sawarabigothic { 
+  font-family: "Sawarabi Gothic"; }
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Board;
 
 class BoardController extends Controller
 {
@@ -14,10 +14,14 @@ class BoardController extends Controller
      */
     public function index()
     {
-        //게시글 리스트 
-        $wiz_boards =  DB::table('wiz_boards')->get();
+        //게시글 리스트 )
+        $wiz_boards =  Board::where('users')
+        ->join('wiz_boards','users.id','=','wiz_boards.user_id')
+        ->select('users.name')
+        ->paginate(10);
+        dd($title);
         return view('board.list')->with('wiz_boards', $wiz_boards);
-    }
+    }        
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +42,11 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('wiz_boards')->insert(['title'=>$request->title,'content'=>$request->content, 'created_at'=>$request->created_at,'user_id'=>1]);
+        Board::insert([
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'user_id'=>1
+            ]);
         return redirect(route('list'));
     }
 
@@ -88,7 +96,7 @@ class BoardController extends Controller
     public function destroy($id)
     {
         DB::table('wiz_boards')->where('id',$id)->delete();
-        return redirect('board/list');
+        return redirect('list');
     }
 }
 

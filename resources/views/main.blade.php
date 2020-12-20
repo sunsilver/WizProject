@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('title', 'title name')
 @section('style')
-  <!-- Template Main CSS File -->
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  
 @endsection
 
 @section( 'content')
@@ -639,7 +638,6 @@
 
 
 @section('script')
-<!-- Template Main JS File -->
-<script src="{{ asset('js/main.js') }}" defer></script>
+
 
 @endsection

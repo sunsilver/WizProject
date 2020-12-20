@@ -1,6 +1,10 @@
 @extends('layouts.app')
+@section('title', 'title name')
+@section('style')
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
 
-@section('content')
+@section( 'content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -21,4 +25,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+
 @endsection

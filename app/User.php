@@ -36,4 +36,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 하나의 회원은 여러 글을 가질 수 있다
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
+    }
+
+     // 하나의 회원은 여러 댓글을 가질 수 있다
+     public function comments()
+     {
+         return $this->hasMany('App\Comment');
+     }
+     
+
 }
