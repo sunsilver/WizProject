@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('title', 'title name')
+
+{{-- 아래는 진행 예정 --}}
+@section('redircetPage')
+    @include('layouts.user')
+@endsection
+
 @section('style')
   
 @endsection
@@ -24,7 +30,7 @@
 
       <div class="section-title">
         <h2>About</h2>
-        <p class="wf-sawarabigothic">私はヨンジン専門大学のウェブデーターベースを専攻している4 年生のハン・ヘウンと申します。
+        <p class="jp">私はヨンジン専門大学のウェブデーターベースを専攻している4 年生のハン・ヘウンと申します。
           私の長所は、ゴールまでの道筋を立て、着実に努力し続けられるところです。計画性
           柔軟性の両方を組み合わせて努力する習慣を身に着けたおかげで、短期間で日本語の実力を伸ばしたり、複数のポジションでの開発にチャレンジしてやり遂げるなどの結果を出すことができました。また、チームの中では、常に周りにポジティブなエネルギーを与えることができます。
           今後も、この強みを活かして、やったことがない事や、達成が難しいと思えるようなことでも、積極的にチャレンジし、チームを率いる人になって会社に貢献していきたいです。
@@ -37,8 +43,8 @@
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content">
           <h3 style="margin-top: 2%;">Web Developer.</h3>
-          <p class="font-italic wf-sawarabigothic">
-            ITで新しい価値を創造して世界を変える！ ハン·ヘウンです！
+          <p class="font-italic jp">
+            ITで新しい価値を創造して世界を変える！ ハン·ヘウンと申します！
           </p>
           <div class="row" >
             <div class="col-lg-6" style="margin-top: 2%;">
@@ -56,7 +62,7 @@
               </ul>
             </div>
           </div>
-          <p class="wf-sawarabigothic">
+          <p class="wf-sawarabigothic jp">
             私は人々の生活をより便利にする仕事がしたいです。第4次産業革命と言われている現在、それはITで実現できると確信しています。 忙しい現代人が、一日をより価値あるものにするための環境を提供するサービスを開発することが目標です。世の中の人々がITを難しく考えずに、気軽に近づけるサービスを作りたいと考えています。
           </p>
         </div>
@@ -137,10 +143,10 @@
 
       <div class="section-title">
         <h2>Career</h2>
-        <p>ALL Wiz マインドをもって、エンジニアとしてどんどん成長し、私の成長を通じて会社に貢献したいです。</p>
+        <p class="jp">ALL Wiz マインドをもって、エンジニアとしてどんどん成長し、私の成長を通じて会社に貢献したいです。</p>
       </div>
 
-      <div class="row">
+      <div class="row jp">
         <div class="col-lg-6">
           <h3 class="resume-title">1年目の目標</h3>
           <div class="resume-item pb-0">
@@ -184,9 +190,9 @@
 
       <div class="section-title">
         <h2>Portfolio</h2>
-        <h5>* 詳細情報は提出したポートフォリオをご確認ください！ *</h5>
-        <p class="wf-sawarabigothic">大学時代には、良いシステムを作り上げるためには、自分の担当分野だけでなく、 プロジェクトの全体的な流れを把握することの重要性を感じ、フロントエンドから
-          バックエンドまで幅広いポジションを積極的に経験しました。これまでのphp 、laravel 、 pythonなどを使ったプロジェクトの経験を活かして会社に貢献しながら、
+        <h5 class="jp">* 詳細情報は提出したポートフォリオをご確認ください！ *</h5>
+        <p class="wf-sawarabigothic jp">大学時代には、良いシステムを作り上げるためには、自分の担当分野だけでなく、 プロジェクトの全体的な流れを把握することの重要性を感じ、フロントエンドから
+          バックエンドまで幅広いポジションを積極的に経験しました。これまでの <span style='"Open Sans", sans-serif'> php 、laravel 、 python </span> などを使ったプロジェクトの経験を活かして会社に貢献しながら、
           自分が新たに学んだことは、積極的に周りにも発信していきたいと思います。
           </p>
       </div>
@@ -308,7 +314,7 @@
         {{-- <p class="wf-sawarabigothic">周りから見た私は！</p> --}}
       </div>
 
-      <div class="row">
+      <div class="row jp">
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box iconbox-blue">
@@ -359,7 +365,7 @@
   </section><!-- End Services Section -->
 
   <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials section-bg">
+  <section id="testimonials" class="testimonials section-bg jp">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
@@ -391,7 +397,7 @@
         </div>
 
         <div class="testimonial-item">
-          <img class="testimonial-img" src="">
+          <img class="testimonial-img" src="{{ asset('img/somin.jpg') }}">
           <h3>キム·ソミン</h3>
           <h4>( 27歳 / 会社員 )</h4>
           <p>
@@ -414,7 +420,7 @@
         </div>
 
         <div class="testimonial-item">
-          <img class="testimonial-img" src="">
+          <img class="testimonial-img" src="{{ asset('img/hong.jpg') }}">
           <h3>イ·ホンジュ</h3>
           <h4>( 24歳 / 学生 )</h4>
           <p>
