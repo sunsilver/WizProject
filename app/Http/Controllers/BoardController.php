@@ -43,7 +43,7 @@ class BoardController extends Controller
         if (Auth::user() == null) {
             return redirect(route('login'));
         }else {
-
+            
             $userId = Auth::user()->id;
         }
         Board::insert([
