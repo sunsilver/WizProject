@@ -16,7 +16,7 @@ class BoardController extends Controller
     public function index()
     {
         //게시글 리스트
-        $wiz_boards =  Board::paginate(10);
+        $wiz_boards =  Board::paginate(7);
 
         return view('board.list')->with('wiz_boards', $wiz_boards);
     }        
@@ -65,6 +65,10 @@ class BoardController extends Controller
     public function show($id)
     {
         $wiz_boards = Board::where('id',$id)->first();
+        if($wiz_boards == null) {
+            return abort('404');
+        }
+        // dd($wiz_boards);
         
         return view('board.view')->with('wiz_boards', $wiz_boards);
     }
