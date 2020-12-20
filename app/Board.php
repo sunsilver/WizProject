@@ -25,6 +25,11 @@ class Board extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+    public function getUserName()
+    {
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
     
 
 }

@@ -20,8 +20,8 @@ class CreateCommentsTable extends Migration
             $table->foreign('comment_writer_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unsignedBigInteger('post_id')->comment("게시글 작성자 번호");
-            $table->foreign('post_id')->references('id')->on('boards')->onDelete('cascade');
-
+            $table->foreign('post_id')->references('id')->on('wiz_boards')->onDelete('cascade');
+            
             $table->text('content')->comment("댓글 내용");
             $table->timestamps();
         });

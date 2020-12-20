@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Board;
+use Auth;
 
 class BoardController extends Controller
 {
@@ -14,12 +15,9 @@ class BoardController extends Controller
      */
     public function index()
     {
-        //게시글 리스트 )
-        $wiz_boards =  Board::where('users')
-        ->join('wiz_boards','users.id','=','wiz_boards.user_id')
-        ->select('users.name')
-        ->paginate(10);
-        dd($title);
+        //게시글 리스트
+        $wiz_boards =  Board::paginate(10);
+
         return view('board.list')->with('wiz_boards', $wiz_boards);
     }        
 
@@ -45,8 +43,9 @@ class BoardController extends Controller
         Board::insert([
             'title'=>$request->title,
             'content'=>$request->content,
-            'user_id'=>1
+            'user_id'=>Auth::user()->id
             ]);
+
         return redirect(route('list'));
     }
 
@@ -58,7 +57,8 @@ class BoardController extends Controller
      */
     public function show($id)
     {
-        $wiz_boards = DB::table('wiz_boards')->where('id',$id)->first();
+        $wiz_boards = Board::where('id',$id)->first();
+        
         return view('board.view')->with('wiz_boards', $wiz_boards);
     }
 
@@ -70,7 +70,8 @@ class BoardController extends Controller
      */
     public function edit($id)
     {
-        $wiz_boards = DB::table('wiz_boards')->where('id',$id)->first();
+        $wiz_boards = Board::where('id',$id)->first();
+        
         return view('board.edit_form')->with('wiz_boards',$wiz_boards);
     }
 
@@ -83,7 +84,11 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::table('wiz_boards')->where('id',$id)->update(['title'=> $request->title, 'content'=> $request->content]);
+        Board::where('id',$id)->update([
+            'title'=> $request->title, 
+            'content'=> $request->content
+            ]);
+        
         return redirect('view/' .$id);
     }
 
@@ -95,7 +100,8 @@ class BoardController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('wiz_boards')->where('id',$id)->delete();
+        Board::where('id',$id)->delete();
+        
         return redirect('list');
     }
 }

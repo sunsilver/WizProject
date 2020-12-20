@@ -24,9 +24,8 @@
                     <td><a href="{{ url('view') }}/{{ $wiz_board->id }}">{{$wiz_board->title}}</a></td>
                     <td>{{$wiz_board->content}}</td>
                     <td>{{$wiz_board->created_at}}</td>
-                    <td>{{$wiz_board->name}}</td>
+                    <td>{{$wiz_board->getUserName->name}}</td>
                 </tr>
-
                 @endforeach
                 </tread>
         </table>
