@@ -14,20 +14,15 @@ class Board extends Model
 
     public $timestamps = true;
 
-    // 하나의 글은 하나의 회원을 가질 수 있다
-    public function users()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    // 하나의 글은 여러 댓글을 가질 수 있다
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        // 하나의 게시글에는 여러개의 댓글을 가진다
+        return $this->hasMany('App\Comment', 'post_id', 'id');
     }
-
+    
     public function getUserName()
     {
+        // 하나의 게시글에는 1명의 작성자를 가진다. 
         return $this->hasOne('App\User', 'id', 'user_id');
     }
     
