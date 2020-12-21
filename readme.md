@@ -1,14 +1,14 @@
-PHP >= 7.2.5
-    - BCMath PHP Extension
-    - Ctype PHP Extension
-    - Fileinfo PHP extension
-    - JSON PHP Extension
-    - Mbstring PHP Extension
-    - OpenSSL PHP Extension
-    - PDO PHP Extension
-    - Tokenizer PHP Extension
-    - XML PHP Extension
-Laravel 7.0
+### A desktop development environment
+PHP >= 7.1.3  
+BCMath PHP Extension  
+Ctype PHP Extension  
+JSON PHP Extension  
+Mbstring PHP Extension  
+OpenSSL PHP Extension  
+PDO PHP Extension  
+Tokenizer PHP Extension  
+XML PHP Extension  
+Laravel Version : 5.8.*    
 
 ----------------------------
 ### CMD or TERMINAL
