@@ -16,7 +16,7 @@ class BoardController extends Controller
     public function index()
     {
         //게시글 리스트
-        $wiz_boards =  Board::paginate(7);
+        $wiz_boards =  Board::orderBy('created_at', 'desc')->paginate(7);
 
         return view('board.list')->with('wiz_boards', $wiz_boards);
     }        
