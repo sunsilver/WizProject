@@ -24,7 +24,7 @@
                 @foreach($wiz_boards as $wiz_board)
                 <tr>
                     <td>
-                        <a href="{{ route('view', ['id'=> $wiz_board->id]) }}">{{$wiz_board->title}}</a>
+                        <a href="{{ route('board.show', ['id'=> $wiz_board->id]) }}">{{$wiz_board->title}}</a>
                         {{-- <a href="{{ url('view') }}/{{ $wiz_board->id }}">{{$wiz_board->title}}</a> --}}
                     </td>
                     <td>{{$wiz_board->content}}</td>

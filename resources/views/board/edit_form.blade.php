@@ -9,8 +9,7 @@
 <div class="container" data-aos="zoom-in" data-aos-delay="100">
     <h1>Wiz Board</h1>
     <div class="table-responsive table--no-card m-b-40" style="margin-top:4%;">
-        <form action="{{ url('/update') }}/ {{ $wiz_boards->id }}" method="post">
-        
+        <form action="{{ route('board.update', ['id'=>$wiz_boards->id]) }}" method="post">        
             @csrf
             <!-- value는 폼 안에 있는 내용 -->
             <p style="font-family: 'Do Hyeon', sans-serif; font-size:30px; color:gray;">제목</p>
