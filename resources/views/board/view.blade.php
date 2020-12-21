@@ -85,14 +85,14 @@
                             <h6 class="font-medium">{{ $item->getUserName->name }}</h6> 
                             <span class="m-b-15" id="comment-{{ ($item->id) }}">{{ $item->content }} </span>
                             <textarea type="text" name="content-{{ ($item->id) }}" id="content-{{ ($item->id) }}" class="form-control" rows="3" style="display: none;">{{ $item->content }}</textarea>
-                            @if ($item->comment_writer_id == Auth::user()->id)
                             <div class="comment-footer pt-3"> 
                                 <span class="text-muted float-right">{{ date("F j, Y, g:i a", strtotime($item->created_at)) }}</span> 
-                                <button type="button" class="button" id="comment-edit-{{ $item->id }}" onClick="comment_edit({{ $item->id }})">Edit</button> 
-                                <button type="button" class="button" id="comment-save-{{ $item->id }}" onClick="comment_save({{ $item->id }})" style="display: none;">Publish</button> 
-                                <button type="button" class="button" id="comment-delete-{{ $item->id }}" onClick="comment_delete({{ $item->id }})" >Delete</button> 
+                                @if ($item->comment_writer_id == Auth::user()->id)
+                                <button type="button" class="btn btn-green btn-sm" id="comment-edit-{{ $item->id }}" onClick="comment_edit({{ $item->id }})">Edit</button> 
+                                <button type="button" class="btn btn-cyan btn-sm" id="comment-save-{{ $item->id }}" onClick="comment_save({{ $item->id }})" style="display: none;">Publish</button> 
+                                <button type="button" class="btn btn-danger btn-sm" id="comment-delete-{{ $item->id }}" onClick="comment_delete({{ $item->id }})" >Delete</button> 
+                                @endif
                             </div>
-                            @endif
                         </div>
                     </div>
                 </div> 

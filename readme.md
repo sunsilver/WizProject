@@ -29,7 +29,10 @@ DB_PASSWORD=password    // user password
 ```
 ### CMD or TERMINAL
 ```bash
-$ php artisan migrate 
+$ php artisan migrate:refresh --seed
 $ php artisan serve
 ```
 [web site](http://localhost:8000)
+
+----------------------------
+### 주석 달아주기

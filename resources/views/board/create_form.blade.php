@@ -26,8 +26,10 @@
             </div>
             @enderror
             
-        <button type="submit" class="btn btn-info">登録</button>
-        <button type="button" class="btn btn-secondary">リスト</button>
+        <button type="submit" class="btn btn-info btn-sm">登録</button>
+        <a href="{{ url('/list')}}" class="btn btn-secondary btn-sm">
+            リスト
+        </a>
         </form>
     </div>   
 </div>
