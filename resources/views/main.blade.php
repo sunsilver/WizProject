@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'title name')
+@section('title', 'プロフィール')
 
 {{-- 아래는 진행 예정 --}}
 @section('redircetPage')

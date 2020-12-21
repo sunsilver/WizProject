@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .pagination a.active {
-    background-color: #4CAF50;
+    background-color: #0563bbc2;
     color: white;
   }
   
@@ -76,9 +76,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #3282cda3;
   border: none;
-  color: white;
+  color: #232426;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

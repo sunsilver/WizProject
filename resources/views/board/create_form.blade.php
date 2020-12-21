@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'title name')
+@section('title', '作成フォーム')
 
 @section('style')
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -12,14 +12,14 @@
         <form action="{{ url('/store') }}" method="post">
             @csrf
 
-            Title : <input type="text" class="form-control" name="title" value="{{old('title')}}"> <br>
+            Title : <input type="text" class="form-control" name="title" value="{{old('title')}}" required> <br>
             @error('title')
             <div class="alert alert-danger">
                 {{$message}}
             </div>
             @enderror
 
-            Content : <textarea class="form-control"name="content" value="{{old('content')}}" rows="10"></textarea> <br>
+            Content : <textarea class="form-control"name="content" value="{{old('content')}}" rows="10" required></textarea> <br>
             @error('content')
             <div class="alert alert-danger">
                 {{$message}}

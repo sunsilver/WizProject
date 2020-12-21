@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'title name')
+@section('title', '掲示板リスト')
 
 @section('loginUI')
     @include('layouts.user')
@@ -13,19 +13,20 @@
 <div class="container" data-aos="zoom-in" data-aos-delay="100">
     <h1>Wiz Board</h1>
     <div class="table-responsive table--no-card m-b-40" style="margin-top:4%;">
-        <table class="table table-borderless table-striped table-earning">
-            <thread>
-                <tr style="background-color: #0f62a7;">
-                    <th>Title</th>
-                    <th>Content</th>
-                    <th>Date</th>
-                    <th>Writer</th>
-                </tr>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
+                <th>Writer</th>
+            </tr>
+            </thead>
+            <tbody>
                 @foreach($wiz_boards as $wiz_board)
                 <tr>
                     <td>
                         <a href="{{ route('board.show', ['id'=> $wiz_board->id]) }}">{{$wiz_board->title}}</a>
-                        {{-- <a href="{{ url('view') }}/{{ $wiz_board->id }}">{{$wiz_board->title}}</a> --}}
                     </td>
                     <td>{{$wiz_board->content}}</td>
                     <td>
@@ -34,12 +35,12 @@
                     <td>{{$wiz_board->getUserName->name}}</td>
                 </tr>
                 @endforeach
-            </tread>
-        </table>
+            </tbody>
+          </table>
     </div>
     <div class="row" >
         {{ $wiz_boards->links() }}
-        <div class="bt col-md-4">
+        <div class=" col-md-4">
         <button type="button" class="button" style="float: right"
                 onclick="window.location='{{url('create_form')}}'">モーメントを作る</button>
         </div>

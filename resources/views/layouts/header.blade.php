@@ -1,7 +1,7 @@
-<!-- ======= Mobile nav toggle button ======= -->
+ {{-- ======= Mobile nav toggle button =======  --}}
 <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
-<!-- ======= Header ======= -->
+ {{-- ======= Header =======  --}}
 <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav class="nav-menu">
@@ -23,5 +23,7 @@
         <li><a href="/#services"><i class="bx bx-server"></i> <span>Strength</span></a></li>
         <li class="active"><a href="{{ url('/list') }}"><i class="bx bx-chalkboard"></i> <span>Board</span></a></li>
     @endif
-    </nav><!-- .nav-menu -->
-</header><!-- End Header -->
+    </nav>
+    {{-- .nav-menu  --}}
+</header>
+ {{-- End Header  --}}

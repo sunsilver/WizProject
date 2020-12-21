@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'title name')
+@section('title', '内容')
 @section('style')
   
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -59,7 +59,7 @@
     <div class="w3-container table-responsive table--no-card m-b-40" >
         <div class="w3-panel w3-card-4">
             <div class="comment-widgets m-3">
-                <!-- Comment Row -->
+                 {{-- Comment Row --}}
                 @if ($wiz_boards->comments->count() == 0)
                 <div class="d-flex flex-row comment-row m-t-0" id="empty-comment">
                     <div class="comment-text w-100 text-center">
@@ -104,7 +104,8 @@
                         </form>
                     </div>
                 </div> 
-            </div> <!-- Card -->
+            </div> 
+            {{-- Card  --}}
         </div>
     </div>
 </div>
@@ -185,6 +186,7 @@ $("#btn-comment").click(function (event) {
         contentType: false,
         cache: false,
         success: function (data) {
+            console.log(data);
             // 데이터가 성공일 경우 
             if(data['success'] == true) {
                 var id = data['data']['id'];

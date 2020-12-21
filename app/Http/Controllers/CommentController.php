@@ -18,9 +18,12 @@ class CommentController extends Controller
         }
 
         // 실패했을 경우 입력값이 NULL 일경우
-        // return isset($request->content);
-        if(isset($request->content) || isset($request->post_id) || isset($userId)) {
-            return response()->json(array('success' => false));
+        if(empty($request->content) || empty($request->post_id) || empty($userId)) {
+            $nullData = array();
+            $nullData['content'] = $request->content;
+            $nullData['post_id'] = $request->post_id;
+            $nullData['userId'] = $userId;
+            return response()->json(array('success' => false, 'data' => $nullData));
         }
 
         // 데이터 추가
