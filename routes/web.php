@@ -25,10 +25,10 @@ Route::group(['middleware' => 'IsLogin'], function () {
     Route::get('/list', 'BoardController@index')->name('list');
     Route::get('/create_form', 'BoardController@create');
     Route::post('/store', 'BoardController@store');
-    Route::get('/view/{id}', 'BoardController@show')->name('view');
-    Route::get('/edit_form/{id}', 'BoardController@edit');
-    Route::post('/update/{id}', 'BoardController@update');
-    Route::get('/delete/{id}', 'BoardController@destroy');
+    Route::get('/view/{id}', 'BoardController@show')->name('board.show');
+    Route::get('/edit_form/{id}', 'BoardController@edit')->name('board.edit');
+    Route::post('/update/{id}', 'BoardController@update')->name('board.update');
+    Route::get('/delete/{id}', 'BoardController@destroy')->name('board.destroy');
 
     // Comment API
     Route::post('/comment/create', 'CommentController@create')->name('comment.create');

@@ -4,26 +4,22 @@
   
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <style>
-
     .btn-sm {
         padding: 0.25rem 0.5rem;
         font-size: 0.76563rem;
         line-height: 1.5;
         border-radius: 1px
     }
-
     .btn-cyan {
         color: #fff;
         background-color: #27a9e3;
         border-color: #27a9e3
     }
-
     .btn-cyan:hover {
         color: #fff;
         background-color: #1a93ca;
         border-color: #198bbe
     }
-
     .comment-widgets .comment-row:hover {
         background: rgba(0, 0, 0, 0.05)
     }
@@ -52,19 +48,16 @@
              
             </div>
             <div class="card-body" style="margin-left:3%; margin-bottom:3%;">
-                <button class="btn btn-outline-primary"
-                    onclick="window.location='{{ url('edit_form')}}/{{$wiz_boards->id }}'">修正</button>
-                <button class="btn btn-outline-primary"
-                    onclick="window.location='{{ url('delete')}}/{{$wiz_boards->id }}'">削除</button>
+                @if (Auth::user()->id == $wiz_boards->getUserName->id)
+                    <button class="btn btn-outline-primary" onclick="window.location='{{ route('board.edit', ['id'=>$wiz_boards->id]) }}'">修正</button>
+                    <button class="btn btn-outline-primary" onclick="window.location='{{route('board.destroy', ['id'=>$wiz_boards->id]) }}'">削除</button>
+                @endif
                 <a href="{{ url('list')}}" class="btn winter-neva-gradient" role="button" style="margin-left:40%;">リスト</a>
             </div>
         </div>
     </div>   
     <div class="table-responsive table--no-card m-b-40" >
         <div class="card">
-            {{-- <div class="card-body text-center">
-                <h4 class="card-title">Latest Comments</h4>
-            </div> --}}
             <div class="comment-widgets m-3">
                 <!-- Comment Row -->
                 @if ($wiz_boards->comments->count() == 0)
@@ -92,14 +85,13 @@
                         </div>
                     </div>
                 </div> 
-                {{-- <hr> --}}
                 @endforeach
                 @endif
                 <div id="comment-table-add" style="display: none;">
                 </div>
                 <div class="d-flex flex-row comment-row m-t-0 p-3">
                     <div class="comment-text w-100">
-                        <h6 class="font-medium">{{ Auth::user()->name }}様</h6> 
+                        <h6 class="font-medium">{{ Auth::user()->name }}님</h6> 
                         <form id="form-comment">
                             @csrf
                             <div class="form-group">
@@ -128,7 +120,6 @@ function comment_edit(id) {
     $("#comment-edit-"+id).hide();  // 편집 버튼
     $("#comment-save-"+id).show();  // 발행 버튼
 } 
-
 $(function () {
     $.ajaxSetup({
         headers: {
@@ -149,7 +140,7 @@ function comment_save(id){  // 발행 버튼이 가지고 있는 이벤트
         success: function (data) {
             console.log(data['data']['content']);
             $("#comment-"+id).show(); 
-            $("#comment-"+id).text(data['data']['content']); 
+            $("#comment-"+id).text(data['data']['content']);  
             $("#content-"+id).hide();
             $("#content-"+id).text(data['data']['content']); 
             $("#comment-edit-"+id).show();
@@ -162,7 +153,6 @@ function comment_save(id){  // 발행 버튼이 가지고 있는 이벤트
         }
     });
 }
-
 function comment_delete(id){
     $.ajax({
         data: {
@@ -181,7 +171,6 @@ function comment_delete(id){
         }
     });
 }
-
 $("#btn-comment").click(function (event) {
     event.preventDefault();
     var form = $('#form-comment')[0];
@@ -218,12 +207,11 @@ $("#btn-comment").click(function (event) {
                         + "</div>"
                         + "</div>";
                 $('#comment-table-add').append(html); 
-                $('#comment-table-add').slideDown(); 
-                $('#content').val('');   
-
-                $("#btn-comment").prop("disabled", false);  
-                $("#empty-comment").remove();           
-                messageWith('success', '댓글이 작성되었습니다.');  
+                $('#comment-table-add').slideDown();  
+                $('#content').val('');              
+                $("#btn-comment").prop("disabled", false); 
+                $("#empty-comment").remove();    
+                messageWith('success', '댓글이 작성되었습니다.'); 
             } else {
                 alert('내용을 작성해주세요.');
                 $("#btn-comment").prop("disabled", false);
@@ -237,7 +225,6 @@ $("#btn-comment").click(function (event) {
         }
     });
 });
-
 // color : 색상 , message : 내용
 function messageWith(color, message) {
         $.notify({
