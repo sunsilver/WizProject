@@ -40,8 +40,8 @@
     <div class="row" >
         {{ $wiz_boards->links() }}
         <div class="bt col-md-4">
-        <button type="button" class="btn juicy-peach-gradient" style="float: right"
-                onclick="window.location='{{url('create_form')}}'">글쓰기</button>
+        <button type="button" class="button" style="float: right"
+                onclick="window.location='{{url('create_form')}}'">モーメントを作る</button>
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="card2 card border-0 px-4 py-5">
-                                <div class="row mb-4 px-3">
+                                {{-- <div class="row mb-4 px-3">
                                     <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
                                     <div class="facebook text-center mr-3">
                                         <i class='bx bxl-facebook-circle'></i>
@@ -32,7 +32,7 @@
                                     <div class="linkedin text-center mr-3">
                                         <i class='bx bxl-github'></i>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row px-3 mb-4">
                                     <div class="line"></div> 
                                     <small class="or text-center">Or</small>
