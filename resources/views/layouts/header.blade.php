@@ -6,7 +6,7 @@
 
     <nav class="nav-menu">
     {{-- 호스트 도메인 == 현재 도메인 --}}
-    @if ($_SERVER["HTTP_HOST"] == url()->current())
+    @if ($_SERVER["HTTP_HOST"] == explode( '//',  url()->current())[1])
         {{-- 메인화면 일 경우 아래 코드 실행 --}}
         <li class="active"><a href="#silver"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
