@@ -36,18 +36,38 @@
                                 <div class="row px-3"> 
                                     <label for="name" class="mb-1"><h6 class="mb-0 text-sm">{{ __('Name') }}</h6></label> 
                                     <input id="name" type="text" class="mb-4 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="row px-3"> 
                                     <label for="email" class="mb-1"><h6 class="mb-0 text-sm">{{ __('email') }}</h6></label> 
                                     <input id="email" type="email" class="mb-4 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="row px-3"> 
                                     <label for="password" class="mb-1"><h6 class="mb-0 text-sm">{{ __('password') }}</h6></label> 
                                     <input id="password" type="password" class="mb-4 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="row px-3"> 
                                     <label for="password-confirm" class="mb-1"><h6 class="mb-0 text-sm">{{ __('password-confirm') }}</h6></label> 
                                     <input id="password-confirm" type="password" class="mb-4" name="password_confirmation" required autocomplete="new-password">
+                                    @error('password-confirm')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="row px-3 mb-4">
                                     <a href="{{ route('login') }}" class="ml-auto mb-0 text-sm">{{ __('login page') }}</a>

@@ -36,6 +36,11 @@
                                 <div class="row px-3"> 
                                     <label for="email" class="mb-1"><h6 class="mb-0 text-sm">{{ __('E-Mail Address') }}</h6></label> 
                                     <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address" value="{{ old('email') }}" required autocomplete="email" autofocus>  
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="row px-3 mb-4">
                                     <a href="{{ route('login') }}" class="ml-auto mb-0 text-sm">{{ __('Login Page') }}</a>
