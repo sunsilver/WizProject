@@ -274,9 +274,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# silver Section
 --------------------------------------------------------------*/
-#hero {
+
+#silver {
   width: 100%;
   height: 100vh;
   background: url("../img/hhe3.png") top right no-repeat;
@@ -286,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 992px) {
   
-  #hero {
+  #silver {
     background: url("../img/a9.png") top center no-repeat;
     background-size: cover;
     background-position: 30% 100%;
@@ -296,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 500px) {
   
-  #hero {
+  #silver {
     background: url("../img/a9.png") top center no-repeat;
     background-size: contain;
     background-position: 70% 100%;
@@ -306,12 +307,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 992px) {
   
-  #hero {
+  #silver {
     padding-left: 160px;
   }
 }
 
-#hero:before {
+#silver:before {
   content: "";
   background: rgba(255, 255, 255, 0.8);
   position: absolute;
@@ -321,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 
-#hero h1 {
+#silver h1 {
   margin: 0;
   font-size: 64px;
   font-weight: 700;
@@ -329,23 +330,23 @@ h1, h2, h3, h4, h5, h6 {
   color: #45505b;
 }
 
-#hero p {
+#silver p {
   color: #45505b;
   margin: 15px 0 0 0;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
 
-#hero p span {
+#silver p span {
   color: #0563bb;
   letter-spacing: 1px;
 }
 
-#hero .social-links {
+#silver .social-links {
   margin-top: 30px;
 }
 
-#hero .social-links a {
+#silver .social-links a {
   font-size: 24px;
   display: inline-block;
   color: #45505b;
@@ -354,19 +355,19 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-#hero .social-links a:hover {
+#silver .social-links a:hover {
   color: #0563bb;
 }
 
 @media (max-width: 992px) {
-  #hero {
+  #silver {
     text-align: center;
   }
-  #hero h1 {
+  #silver h1 {
     font-size: 32px;
     line-height: 36px;
   }
-  #hero p {
+  #silver p {
     margin-top: 10px;
     font-size: 20px;
     line-height: 24px;

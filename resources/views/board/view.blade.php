@@ -20,6 +20,17 @@
         background-color: #1a93ca;
         border-color: #198bbe
     }
+
+    .btn-green {
+        color: #fff;
+        background-color: #1cb335;
+        border-color: #1cb335
+    }
+    .btn-green:hover {
+        color: #fff;
+        background-color: #11c72f;
+        border-color: #11b12c
+    }
     .comment-widgets .comment-row:hover {
         background: rgba(0, 0, 0, 0.05)
     }
@@ -49,10 +60,10 @@
             </div>
             <div class="card-body" style="margin-left:3%; margin-bottom:3%;">
                 @if (Auth::user()->id == $wiz_boards->getUserName->id)
-                    <button class="btn btn-outline-primary" onclick="window.location='{{ route('board.edit', ['id'=>$wiz_boards->id]) }}'">Edit</button>
-                    <button class="btn btn-outline-primary" onclick="window.location='{{route('board.destroy', ['id'=>$wiz_boards->id]) }}'">DeleteDelete</button>
+                    <button class="btn btn-green btn-sm" onclick="window.location='{{ route('board.edit', ['id'=>$wiz_boards->id]) }}'">Edit</button>
+                    <button class="btn btn-danger btn-sm" onclick="window.location='{{route('board.destroy', ['id'=>$wiz_boards->id]) }}'">Delete</button>
                 @endif
-                <a href="{{ url('list')}}" class="btn btn-outline-primary" role="button" style="float:right; margin-right:3%;">List</a>
+                <a href="{{ url('list')}}" class="btn btn-light btn-sm" role="button" style="float:right; margin-right:3%;">List</a>
             </div>
         </div>
     </div>   
