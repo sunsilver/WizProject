@@ -29,8 +29,8 @@
 @section('content')
 <div class="container" data-aos="zoom-in" data-aos-delay="100">
     <h1>Wiz Board</h1>
-    <div class="table-responsive table--no-card m-b-40" style="margin-top:4%;">
-        <div class="card" style="border-radius: 10px;">
+    <div class="w3-container table-responsive table--no-card m-b-40" style="margin-top:4%;">
+        <div class="w3-panel w3-card-4">
             <div class="card-body">
                 <div class="title" style="font-size:30px; color:gray; margin-botton:5%;">
                     <h4>
@@ -49,15 +49,15 @@
             </div>
             <div class="card-body" style="margin-left:3%; margin-bottom:3%;">
                 @if (Auth::user()->id == $wiz_boards->getUserName->id)
-                    <button class="btn btn-outline-primary" onclick="window.location='{{ route('board.edit', ['id'=>$wiz_boards->id]) }}'">修正</button>
-                    <button class="btn btn-outline-primary" onclick="window.location='{{route('board.destroy', ['id'=>$wiz_boards->id]) }}'">削除</button>
+                    <button class="btn btn-outline-primary" onclick="window.location='{{ route('board.edit', ['id'=>$wiz_boards->id]) }}'">Edit</button>
+                    <button class="btn btn-outline-primary" onclick="window.location='{{route('board.destroy', ['id'=>$wiz_boards->id]) }}'">DeleteDelete</button>
                 @endif
-                <a href="{{ url('list')}}" class="btn winter-neva-gradient" role="button" style="margin-left:40%;">リスト</a>
+                <a href="{{ url('list')}}" class="btn btn-outline-primary" role="button" style="float:right; margin-right:3%;">List</a>
             </div>
         </div>
     </div>   
-    <div class="table-responsive table--no-card m-b-40" >
-        <div class="card">
+    <div class="w3-container table-responsive table--no-card m-b-40" >
+        <div class="w3-panel w3-card-4">
             <div class="comment-widgets m-3">
                 <!-- Comment Row -->
                 @if ($wiz_boards->comments->count() == 0)
@@ -77,9 +77,9 @@
                             @if ($item->comment_writer_id == Auth::user()->id)
                             <div class="comment-footer pt-3"> 
                                 <span class="text-muted float-right">{{ date("F j, Y, g:i a", strtotime($item->created_at)) }}</span> 
-                                <button type="button" class="btn btn-cyan btn-sm" id="comment-edit-{{ $item->id }}" onClick="comment_edit({{ $item->id }})">Edit</button> 
-                                <button type="button" class="btn btn-success btn-sm" id="comment-save-{{ $item->id }}" onClick="comment_save({{ $item->id }})" style="display: none;">Publish</button> 
-                                <button type="button" class="btn btn-danger btn-sm" id="comment-delete-{{ $item->id }}" onClick="comment_delete({{ $item->id }})" >Delete</button> 
+                                <button type="button" class="button" id="comment-edit-{{ $item->id }}" onClick="comment_edit({{ $item->id }})">Edit</button> 
+                                <button type="button" class="button" id="comment-save-{{ $item->id }}" onClick="comment_save({{ $item->id }})" style="display: none;">Publish</button> 
+                                <button type="button" class="button" id="comment-delete-{{ $item->id }}" onClick="comment_delete({{ $item->id }})" >Delete</button> 
                             </div>
                             @endif
                         </div>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="d-flex flex-row comment-row m-t-0 p-3">
                     <div class="comment-text w-100">
-                        <h6 class="font-medium">{{ Auth::user()->name }}님</h6> 
+                        <h6 class="font-medium">{{ Auth::user()->name }}様</h6> 
                         <form id="form-comment">
                             @csrf
                             <div class="form-group">
@@ -138,18 +138,18 @@ function comment_save(id){  // 발행 버튼이 가지고 있는 이벤트
         type: "POST",
         dataType: 'JSON',
         success: function (data) {
-            console.log(data['data']['content']);
+            // console.log(data['data']['content']);
             $("#comment-"+id).show(); 
             $("#comment-"+id).text(data['data']['content']);  
             $("#content-"+id).hide();
             $("#content-"+id).text(data['data']['content']); 
             $("#comment-edit-"+id).show();
             $("#comment-save-"+id).hide();
-            messageWith('success', '댓글이 수정되었습니다.');
+            messageWith('success', 'コメントが修正されました。');
             
         },
         error: function (data) {
-            messageWith('danger', '댓글 수정에 실패하였습니다.');
+            messageWith('danger', 'コメントの修正に失敗しました。');
         }
     });
 }
@@ -164,10 +164,10 @@ function comment_delete(id){
         success: function (data) {
             // console.log(data);
             $("#comment-table-"+id).slideUp();
-            messageWith('danger', '댓글이 삭제되었습니다.');
+            messageWith('danger', 'コメントが削除されました。');
         },
         error: function (data) {
-            messageWith('danger', '댓글 삭제에 실패하였습니다.');
+            messageWith('danger', 'コメントの削除に失敗しました。');
         }
     });
 }
@@ -211,16 +211,16 @@ $("#btn-comment").click(function (event) {
                 $('#content').val('');              
                 $("#btn-comment").prop("disabled", false); 
                 $("#empty-comment").remove();    
-                messageWith('success', '댓글이 작성되었습니다.'); 
+                messageWith('success', 'コメントが作成されました。'); 
             } else {
-                alert('내용을 작성해주세요.');
                 $("#btn-comment").prop("disabled", false);
-                messageWith('danger', '댓글 삭제에 실패하였습니다.');
+                messageWith('danger', 'コメントの作成に失敗しました。');
             }
             
         },
         error: function(data){
-            messageWith('danger', '댓글 삭제에 실패하였습니다.<br>관리자에게 문의 바랍니다.');
+            // console.log(data);
+            messageWith('danger', 'コメントの作成に失敗しました。<br>管理者にお問い合わせください。');
             $("#btn-comment").prop("disabled", false);
         }
     });

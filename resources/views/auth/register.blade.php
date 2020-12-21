@@ -21,7 +21,7 @@
                         <div class="card2 card border-0 px-4 py-5">
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
-                                <div class="row mb-4 px-3">
+                                {{-- <div class="row mb-4 px-3">
                                     <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
                                     <div class="facebook text-center mr-3">
                                         <i class='bx bxl-facebook-circle'></i>
@@ -32,7 +32,7 @@
                                     <div class="linkedin text-center mr-3">
                                         <i class='bx bxl-github'></i>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row px-3"> 
                                     <label for="name" class="mb-1"><h6 class="mb-0 text-sm">{{ __('Name') }}</h6></label> 
                                     <input id="name" type="text" class="mb-4 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

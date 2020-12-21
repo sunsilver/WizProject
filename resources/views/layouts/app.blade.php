@@ -21,6 +21,7 @@
     <link href="{{ asset('css/venobox.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/aos.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     @yield('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.1.0/css/bootstrap-notify.min.css" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}?{{ time() }}" rel="stylesheet">

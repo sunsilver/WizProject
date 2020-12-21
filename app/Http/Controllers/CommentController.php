@@ -18,8 +18,9 @@ class CommentController extends Controller
         }
 
         // 실패했을 경우 입력값이 NULL 일경우
-        if($request->content == null || $request->post_id == null || $userId == null) {
-            return response()->json(array('success' => false, 'message' => '댓글을 작성해주세요.'))->with('warning', '작성에 실패하였습니다.');
+        // return isset($request->content);
+        if(isset($request->content) || isset($request->post_id) || isset($userId)) {
+            return response()->json(array('success' => false));
         }
 
         // 데이터 추가
