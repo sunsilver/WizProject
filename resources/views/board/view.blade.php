@@ -20,7 +20,6 @@
         background-color: #1a93ca;
         border-color: #198bbe
     }
-
     .btn-green {
         color: #fff;
         background-color: #1cb335;

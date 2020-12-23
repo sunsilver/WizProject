@@ -117,5 +117,3 @@ class BoardController extends Controller
         return redirect('list');
     }
 }
-
-
